@@ -44,7 +44,7 @@ class CustomData:
                 "location" : [self.location],
                 "total_sqft" : [self.total_sqft],
                 "bath" : [self.bath],
-                "bhk" : [self.bath],
+                "bhk" : [self.bhk],
             }
             return pd.DataFrame(custom_data_input_dict)
 

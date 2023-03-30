@@ -1,0 +1,120 @@
+<html>
+<head>
+    <title>Banglore Home Price Prediction</title>
+    <link rel="stylesheet" href="back.css">
+    <style>
+        h1 {text-align: center;}
+    </style>
+</head>
+<body>
+    <div class="img"></div>
+    
+
+    <div class="login">
+        <h1>Bangaluru House Price Prediction</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        
+        <div class="mb-3">
+            <label class="form-label">Location</label>
+            <select class="form-control" name="location" placeholder="Enter the location" required>
+                <option class="placeholder" selected disabled value="">Select Location</option>
+                <option value="1st Block Jayanagar">
+                    1st Block Jayanagar
+                </option>
+                <option value="2nd Phase Judicial Layout">
+                    2nd Phase Judicial Layout
+                </option>
+                <option value="Attibele">
+                    Attibele
+                </option>
+                <option value="BTM Layout">
+                    BTM Layout
+                </option>
+                <option value="Chandapura">
+                    Chandapura
+                </option>
+                <option value="Devanahalli">
+                    Devanahalli
+                </option>
+                <option value="Electronic City">
+                    Electronic City
+                </option>
+                <option value="Gubbalala">
+                    Gubbalala
+                </option>
+                <option value="HSR Layout">
+                    HSR Layout
+                </option>
+                <option value="Hebbal">
+                    Hebbal
+                </option>
+                <option value="Indira Nagar">
+                    Indira Nagar
+                </option>
+                <option value="JP Nagar">
+                    JP Nagar
+                </option>
+                <option value="Kadubeesanahalli">
+                    Kadubeesanahalli
+                </option>
+                <option value="Lakshminarayana Pura">
+                    Lakshminarayana Pura
+                </option>
+                <option value="Malleshwaram">
+                    Malleshwaram
+                </option>
+                <option value="Marathahalli">
+                    Marathahalli
+                </option>
+                <option value="NRI Layout">
+                    NRI Layout
+                </option>
+                <option value="Nehru Nagar">
+                    Nehru Nagar
+                </option>
+                <option value="Old Airport Road">
+                    Old Airport Road
+                </option>
+                <option value="Padmanabhanagar">
+                    Padmanabhanagar
+                </option>
+                <option value="Raja Rajeshwari Nagar">
+                    Raja Rajeshwari Nagar
+                </option>
+                <option value="Sarjapur">
+                    Sarjapur
+                </option>
+                <option value="Tumkur Road">
+                    Tumkur Road
+                </option>
+                <option value="Uttarahalli">
+                    Uttarahalli
+                </option>
+            </select>
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label">BHK</label>
+            <input class="form-control" type="number" name="bhk"
+                placeholder="Enter no of Bedroom" min='0' max='10' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Bath</label>
+            <input class="form-control" type="number" name="bath"
+                placeholder="Enter no of Bathroom" min='0' max='10' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Area in Square feet</label>
+            <input class="form-control" type="number" name="total_sqft"
+                placeholder="Enter Area" min='500' max='10000' />
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict the Price" required />
+        </div>
+    </form>
+    <h2>
+       Estimated Price in Lakhs {{results}}
+    </h2>
+   <body>
+</html>
