@@ -35,7 +35,7 @@ def predict_datapoint():
         p_bath = int(pred_df['bath'][0])
         p_sqft = int(pred_df['total_sqft'][0])
 
-        if (p_bhk >= p_bath) and ((p_sqft/p_bhk) > 300):
+        if (p_bhk >= p_bath) and ((p_sqft/p_bhk) >= 300):
             predict_pipeline=PredictPipeline()
             results = predict_pipeline.predict(pred_df)
             print(results)
