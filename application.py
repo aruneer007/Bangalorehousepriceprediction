@@ -36,13 +36,12 @@ def predict_datapoint():
         p_sqft = int(pred_df['total_sqft'][0])
 
         if (p_bhk >= p_bath) and ((p_sqft/p_bhk) > 300):
-            
             predict_pipeline=PredictPipeline()
             results = predict_pipeline.predict(pred_df)
             print(results)
             return render_template('home.html',results=f"Estimated Price in Lakhs : {results[0]}")
         
-        elif (p_bhk >= p_bath) or ((p_sqft/p_bhk) > 300):
+        elif (p_bhk < p_bath) or ((p_sqft/p_bhk) < 300):
             return render_template('home.html',results = "BHK should not be lesser than no of baths and Area per BHK should not be lesser than 300 sqft")
         
         else:
