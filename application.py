@@ -42,7 +42,7 @@ def predict_datapoint():
             return render_template('home.html',results=f"Estimated Price in Lakhs : {results[0]}")
         
         elif (p_bhk < p_bath) or ((p_sqft/p_bhk) < 300):
-            return render_template('home.html',results = "BHK should not be lesser than no of baths and Area per BHK should not be lesser than 300 sqft")
+            return render_template('home.html',results = "-BHK must be greater than or equal to no of bathrooms --Area per BHK must be greater than 300 sqft")
         
         else:
             return render_template('home.html')
